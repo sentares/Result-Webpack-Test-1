@@ -1,5 +1,7 @@
 const { merge } = require('webpack-merge')
 const commonConfig = require('./webpack.config.common')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const path = require('path')
 
 module.exports = merge(commonConfig, {
 	mode: 'development',
@@ -8,5 +10,17 @@ module.exports = merge(commonConfig, {
 		port: 3000,
 		hot: true,
 		open: true,
+	},
+	plugins: [
+		// new ESLintPlugin({
+		// 	eslintPath: require.resolve('eslint/use-at-your-own-risk'),
+		// 	overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'),
+		// 	extensions: ['js'],
+		// 	fix: true,
+		// 	useEslintrc: false,
+		// }),
+	],
+	stats: {
+		children: true,
 	},
 })

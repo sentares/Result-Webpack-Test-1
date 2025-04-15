@@ -6,19 +6,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shoutcut icon" href="./favicon.png" />
 		<title>Weather Sounds</title>
+		<script src="index.js" defer></script>
 	</head>
 	<body>
 		<div class="container">
 			<h1>Weather Sounds</h1>
 
 			<div class="sound-buttons">
-				<button class="sound-btn" data-sound="rain.mp3" data-bg="summer-bg.jpg">
+				<button
+					class="sound-btn"
+					data-sound="summer.mp3"
+					data-bg="summer-bg.jpg"
+					data-pause-icon="pause.svg"
+					onclick="handleClickButton()"
+				>
 					<img src="./icons/sun.svg" alt="Sun" width="34" height="34" />
 				</button>
-				<button class="sound-btn" data-sound="rain" data-bg="rainy-bg.jpg">
+
+				<button
+					class="sound-btn"
+					data-sound="rain.mp3"
+					data-bg="rainy-bg.jpg"
+					data-pause-icon="pause.svg"
+					onclick="handleClickButton()"
+				>
 					<img src="./icons/cloud-rain.svg" alt="Rain" width="34" height="34" />
 				</button>
-				<button class="sound-btn" data-sound="snow" data-bg="winter-bg.jpg">
+
+				<button
+					class="sound-btn"
+					data-sound="winter.mp3"
+					data-bg="winter-bg.jpg"
+					data-pause-icon="pause.svg"
+					onclick="handleClickButton()"
+				>
 					<img src="./icons/cloud-snow.svg" alt="Snow" width="34" height="34" />
 				</button>
 			</div>

@@ -6,6 +6,9 @@ const commonConfig = require('./webpack.config.common')
 
 module.exports = merge(commonConfig, {
 	mode: 'production',
+	performance: {
+		hints: false,
+	},
 	devtool: 'source-map',
 	plugins: [
 		new BundleAnalyzerPlugin({

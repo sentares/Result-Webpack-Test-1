@@ -35,3 +35,9 @@ window.handleClickButton = function () {
 		activeWeather.currentSound = soundFile
 	}
 }
+
+document.getElementById('volume').addEventListener('input', function () {
+	if (activeWeather.audio) {
+		activeWeather.audio.volume = this.value
+	}
+})

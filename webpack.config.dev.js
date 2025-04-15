@@ -12,13 +12,11 @@ module.exports = merge(commonConfig, {
 		open: true,
 	},
 	plugins: [
-		// new ESLintPlugin({
-		// 	eslintPath: require.resolve('eslint/use-at-your-own-risk'),
-		// 	overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'),
-		// 	extensions: ['js'],
-		// 	fix: true,
-		// 	useEslintrc: false,
-		// }),
+		new ESLintPlugin({
+			eslintPath: require.resolve('eslint/use-at-your-own-risk'),
+			extensions: ['js'],
+			fix: true,
+		}),
 	],
 	stats: {
 		children: true,

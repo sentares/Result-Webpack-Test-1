@@ -1,0 +1,78 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: url('../public/img/summer-bg.jpg') no-repeat center center fixed;
+	background-size: cover;
+	backdrop-filter: blur(5px);
+	color: #fff;
+	height: 100vh;
+	transition: background-image 0.5s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.container {
+	margin: auto;
+	padding: 2rem;
+	border-radius: 15px;
+	width: 80%;
+}
+
+h1 {
+	margin-bottom: 2rem;
+	font-size: 2.5rem;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.volume-control {
+	margin-top: 2rem;
+	input {
+		width: 100%;
+		max-width: 200px;
+		cursor: pointer;
+	}
+}
+
+.sound-buttons {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 2rem;
+
+	.sound-btn {
+		padding: 1rem;
+		height: 10rem;
+		color: white;
+		border: 1px solid #fff;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	.sound-btn[data-bg='summer-bg.jpg'] {
+		background: url('../public/img/summer-bg.jpg') center/cover;
+	}
+
+	.sound-btn[data-bg='rainy-bg.jpg'] {
+		background: url('../public/img/rainy-bg.jpg') center/cover;
+	}
+
+	.sound-btn[data-bg='winter-bg.jpg'] {
+		background: url('../public/img/winter-bg.jpg') center/cover;
+	}
+}

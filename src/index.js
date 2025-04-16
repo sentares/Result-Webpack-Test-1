@@ -1,4 +1,5 @@
 import './index.scss';
+import WeatherData from './data.ts';
 
 const activeWeather = {
   audio: null,
@@ -8,15 +9,18 @@ const activeWeather = {
 
 window.handleClickButton = function (event) {
   const button = event.currentTarget;
-  const bgImage = button.getAttribute('data-bg');
-  const soundFile = button.getAttribute('data-sound');
+  const buttonId = button.getAttribute('id');
 
-  activeWeather.bgImage = bgImage;
-  activeWeather.soundFile = soundFile;
+  const clickedItem = WeatherData.find((item) => item.name === buttonId);
 
-  document.body.style.backgroundImage = `url('./img/${bgImage}')`;
+  const { imgName, audioName } = clickedItem;
 
-  if (activeWeather.currentSound === soundFile) {
+  document.body.style.backgroundImage = `url('./img/${imgName}')`;
+
+  activeWeather.bgImage = imgName;
+  activeWeather.soundFile = audioName;
+
+  if (activeWeather.currentSound === audioName) {
     if (activeWeather.audio.paused) {
       activeWeather.audio.play();
     } else {
@@ -28,11 +32,11 @@ window.handleClickButton = function (event) {
       activeWeather.audio.currentTime = 0;
     }
 
-    activeWeather.audio = new Audio(`./sounds/${soundFile}`);
+    activeWeather.audio = new Audio(`./sounds/${audioName}`);
 
     activeWeather.audio.loop = true;
     activeWeather.audio.play();
-    activeWeather.currentSound = soundFile;
+    activeWeather.currentSound = audioName;
   }
 };
 

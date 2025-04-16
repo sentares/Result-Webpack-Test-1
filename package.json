@@ -9,13 +9,15 @@
 		"start": "npx webpack serve --config webpack.config.dev.js",
 		"build": "npx webpack --config webpack.config.prod.js",
 		"build:dev": "npx webpack --config webpack.config.dev.js",
-		"lint": "eslint src/**/*.js",
-		"lint:fix": "eslint src/**/*.js --fix"
+		"lint": "eslint \"src/**/*.{js,ts}\"",
+		"lint:fix": "eslint \"src/**/*.{js,ts}\" --fix"
 	},
 	"devDependencies": {
 		"@babel/eslint-parser": "^7.27.0",
 		"@eslint/eslintrc": "^3.3.1",
 		"@eslint/js": "^9.24.0",
+		"@typescript-eslint/eslint-plugin": "^8.30.1",
+		"@typescript-eslint/parser": "^8.30.1",
 		"copy-webpack-plugin": "^13.0.0",
 		"css-loader": "^7.1.2",
 		"css-minimizer-webpack-plugin": "^7.0.2",

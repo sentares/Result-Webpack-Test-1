@@ -1,7 +1,7 @@
-export interface IWeatherItem {
+export interface WeatherItem {
     name: string;
     imgName: string;
     audioName: string;
 }
-declare const WeatherData: IWeatherItem[];
+declare const WeatherData: WeatherItem[];
 export default WeatherData;

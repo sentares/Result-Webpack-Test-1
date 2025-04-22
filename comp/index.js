@@ -12,8 +12,8 @@ const activeWeather = {
 	currentSound: null,
 	bgImage: null,
 }
-const playAudio = src => {
-	const audio = new Audio(`./sounds/${src}`)
+const playAudio = sound => {
+	const audio = new Audio(`${sound}`)
 	audio.loop = true
 	audio.play().catch(console.error)
 	return audio
@@ -24,7 +24,7 @@ function handleClickButton(event) {
 	const clickedItem = data_1.default.find(item => item.name === target.id)
 	if (!clickedItem) return
 	const { imgName, audioName } = clickedItem
-	document.body.style.backgroundImage = `url('./img/${imgName}')`
+	document.body.style.backgroundImage = `url('${imgName}')`
 	activeWeather.bgImage = imgName
 	if (activeWeather.currentSound === audioName && activeWeather.audio) {
 		activeWeather.audio.paused

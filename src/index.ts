@@ -19,8 +19,8 @@ declare global {
 	}
 }
 
-const playAudio = (src: string): HTMLAudioElement => {
-	const audio = new Audio(`./sounds/${src}`)
+const playAudio = (sound: string): HTMLAudioElement => {
+	const audio = new Audio(`${sound}`)
 	audio.loop = true
 	audio.play().catch(console.error)
 	return audio
@@ -35,7 +35,7 @@ function handleClickButton(event: MouseEvent): void {
 
 	const { imgName, audioName } = clickedItem
 
-	document.body.style.backgroundImage = `url('./img/${imgName}')`
+	document.body.style.backgroundImage = `url('${imgName}')`
 	activeWeather.bgImage = imgName
 
 	if (activeWeather.currentSound === audioName && activeWeather.audio) {
